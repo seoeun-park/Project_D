@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="카테고리2">
+        <item>가격의 10%</item>
+        <item>가격의 15%</item>
+        <item>가격의 20%</item>
+        <item>문의</item>
+    </string-array>
+
+</resources>

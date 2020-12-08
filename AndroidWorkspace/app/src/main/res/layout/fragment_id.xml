@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".IdFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="핸드폰 번호를 입력해주세요"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="20dp"/>
+
+
+        <!--        <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp">
+
+                    <TextView
+                        android:id="@+id/name1"
+                        android:layout_width="67dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="50dp"
+                        android:text="이름"
+                        android:textSize="18sp" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/etName"
+                        android:layout_width="251dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="45dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginRight="0dp"
+                        android:hint="이름을 입력해주세요"
+                        android:textSize="16sp" />
+                </LinearLayout>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/etTel"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginLeft="27dp"
+                android:layout_marginTop="30dp"
+                android:ems="10"
+                android:hint="핸드폰 번호('-' 제외)"
+                android:inputType="number"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btnTelAuth"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="5dp"
+                android:background="#3e4ba9"
+                android:text=" 인증 번호 받기"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/etTelAuthNum"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginLeft="27dp"
+                android:layout_marginTop="30dp"
+                android:ems="10"
+                android:hint="인증 번호"
+                android:inputType="number"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="인증번호가 도착하지 않았을 경우 인증번호 받기 버튼을 다시 한번 눌러주세요"
+            android:layout_marginStart="27dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="27dp"
+            android:textSize="13sp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnSearchId"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="53dp"
+                android:background="#3F51B5"
+                android:textColor="#FFFFFF"
+                android:text="E-mail찾기" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</FrameLayout>

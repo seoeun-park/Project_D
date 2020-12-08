@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--xml을 mapper로 사용하기위해 추가 -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="favorite.mapper">
+	<select id="list" resultType="merchandise.MdVO">
+	select * from tblmerchandise
+	where md_serial_number
+	in(select md_serial_number
+		from tblfavorite
+		where member_id = #{id})
+
+	 </select>
+
+
+</mapper>

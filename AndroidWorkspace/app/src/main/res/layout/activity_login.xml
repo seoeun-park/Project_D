@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3e4ba9"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/mainLogo"
+        android:layout_width="280dp"
+        android:layout_height="156dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/logo_large_w" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etId"
+            android:layout_width="295dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#DDDDDD"
+            android:ems="10"
+            android:hint="ID"
+            android:inputType="textEmailAddress"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/etPw"
+            android:layout_width="295dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etId"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#FFFFFF"
+            android:ems="10"
+            android:hint="PW"
+            android:inputType="textPassword"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="295dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/id_pw_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="아이디/비밀번호 찾기"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/signUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:text="회원가입"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/loginSubmitBtn"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/etPw"
+        android:layout_gravity="center"
+        android:layout_marginTop="35dp"
+        android:text="로그인"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loginSubmitBtn"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.nhn.android.naverlogin.ui.view.OAuthLoginButton
+            android:id="@+id/naverLoginBtn"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:src="@drawable/naver_login" />
+
+        <ImageView
+            android:id="@+id/kakaoLoginBtn"
+            android:layout_width="145dp"
+            android:layout_height="50dp"
+            android:src="@drawable/kakao_login_large"
+            android:textColor="#472E08" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <!-- 상단 툴바 -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3e4ba9">
+
+        <LinearLayout
+            android:id="@+id/toolbar_context"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="bottom"
+                android:background="#3e4ba9"
+                app:srcCompat="@drawable/back_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:text="카테고리"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
+       <!--  카테고리 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--1번/6번 카테고리-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <LinearLayout
+                    android:id="@+id/category1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="50dp"
+                    android:orientation="horizontal"
+                    >
+
+                    <ImageView
+                        android:id="@+id/category_icon1"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/cate_mimg1"
+                        />
+
+                    <Button
+                        android:id="@+id/categoryBtn1"
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:background="#FFFFFF"
+                        android:text="디지털/가전"
+                        android:textSize="15dp"  />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/category6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="50dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/category_icon6"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/cate_mimg6" />
+
+                    <Button
+                        android:id="@+id/categoryBtn6"
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:background="#FFFFFF"
+                        android:text="게임/취미"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--2번/7번 카테고리-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/category2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="50dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/category_icon2"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/cate_mimg2" />
+
+                    <Button
+                        android:id="@+id/categoryBtn2"
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+
+                        android:background="#FFFFFF"
+
+                        android:text="유/아동"
+                        android:textSize="15dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/category7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="50dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/category_icon7"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+
+                        android:src="@drawable/cate_mimg7" />
+
+                    <Button
+                        android:id="@+id/categoryBtn7"
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+
+                        android:background="#FFFFFF"
+                        android:text="뷰티/미용"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--3번/8번 카테고리-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/category3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="50dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/category_icon3"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/cate_mimg3" />
+
+                    <Button
+                        android:id="@+id/categoryBtn3"
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:background="#FFFFFF"
+                        android:text="생활 용품"
+                        android:textSize="15dp"  />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/category8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="50dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/category_icon8"
+                        android:layout_width="44dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/cate_mimg8" />
+
+                    <Button
+                        android:id="@+id/categoryBtn8"
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+
+                        android:textSize="15dp"
+                        android:background="#FFFFFF"
+                        android:text="반려동물용품" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--4번/9번 카테고리-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/category4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="50dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/category_icon4"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/cate_mimg4" />
+
+                    <Button
+                        android:id="@+id/categoryBtn4"
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+
+                        android:background="#FFFFFF"
+                        android:text="스포츠/레져"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/category9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="50dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/category_icon9"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/cate_mimg10" />
+
+                    <Button
+                        android:id="@+id/categoryBtn9"
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:background="#FFFFFF"
+                        android:text="기타 물품"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--5번/10번 카테고리-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/category5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="50dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/category_icon5"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/cate_mimg5" />
+
+                    <Button
+                        android:id="@+id/categoryBtn5"
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:background="#FFFFFF"
+                        android:text="의류/잡화"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/category10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="50dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/category_icon10"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/cate_mimg9" />
+
+                    <Button
+                        android:id="@+id/categoryBtn10"
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:background="#FFFFFF"
+                        android:text="무료 나눔" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
+

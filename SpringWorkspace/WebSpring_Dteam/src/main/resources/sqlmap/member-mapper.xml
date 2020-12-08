@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--xml을 mapper로 사용하기위해 추가 -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member.mapper">
+	<!-- 로그인 -->
+	<select id="login" resultType="member.MemberVO">
+		select * from tblmember where member_id=#{id} and member_pw=#{pw}
+	</select>
+	
+	<!-- 네이버 로그인(DB 저장 OX) -->
+	<select id="socialLogin" resultType="member.MemberVO">
+		select * from tblmember where member_id=#{member_id}
+	</select>
+	
+	<select id="join">
+		insert into tblmember(member_id, member_name, member_pw, member_nickname, member_tel)
+		values ( #{member_id}, #{member_name}, #{member_pw}, #{member_nickname}, #{member_tel} )
+	</select>
+	<select id="naver_join">
+		insert into tblmember(member_id, member_nickname, member_name, member_loginType, member_token)
+		values ( #{member_id}, #{member_nickname}, #{member_name}, #{member_loginType}, #{member_token} )
+	</select>
+	
+	<update id="update_token">
+		update tblmember set member_token = #{member_token}
+		where member_id = #{member_id}
+	</update>
+	
+	<select id="kakao_join">
+		insert into tblmember(member_id, member_nickname, member_loginType, member_token)
+		values ( #{member_id}, #{member_nickname}, #{member_loginType}, #{member_token} )	
+	</select>
+	
+	<select id="id_check" resultType="integer">
+		select count(*) from tblmember where member_id=#{id}
+	</select>
+	
+	<select id="nickname_check" resultType="integer">
+		select count(*) from tblmember where member_nickname=#{nickname}
+	</select>
+	
+	<select id="search_id" resultType="string">
+		select member_id from tblmember where member_name = #{member_name} and member_tel = #{member_tel}
+	</select>
+	
+	<select id="search_pw" resultType="string">
+		select member_token from tblmember where member_name = #{member_name} and member_id = #{member_id}
+	</select>
+	
+	<update id="reset_pw">
+		update tblmember set member_pw = #{member_pw}
+		where member_token = #{member_token}
+	</update>
+	<!--  마이페이지 회원정보 요청 -->
+	<select id="detail" resultType="member.MemberVO">
+		select * from tblmember where member_id=#{member_id}
+	</select>
+	<!-- 회원정보수정 -->
+	<update id="update">
+		update tblmember set member_pw=#{member_pw}, member_nickname=#{member_nickname} where member_id = #{member_id}
+	</update>
+	
+</mapper>

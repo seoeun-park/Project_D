@@ -1,0 +1,44 @@
+*{ margin:0 auto; }
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin:0; padding:0; border:0; vertical-align:baseline; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
+
+body { line-height:1 font-size:16px; }
+ol, ul { list-style:none;}
+table { border-collapse:collapse; border-spacing:0 }
+a { text-decoration:none; }
+#header > .container { overflow:hidden;}
+.container {width:1200px; margin:0 auto;}
+h1.logo { margin-top:15px; width:153px; height:52px; float:left;}
+/* .tnb ul { float:right;}
+.tnb ul li { float:left; font-size:14px;}
+.tnb ul li a { padding:0 10px; color:#333;} */
+.menu { height:60px; background-color:#fff; position:relative; border-top:1px solid #aaa;}
+.menu .gnb { float:left;}
+.menu .gnb li { float:left; padding:15px 110px; font-size:20px;} 
+.menu .gnb li a { color:#333; font-weight:600;}
+.visual { background:url(../img/main/banner.jpg)center top no-repeat; height:400px; margin-bottom:36px;}
+.content { width:1200px; margin:0 auto; position:relative;}
+.quick_menu1{ width:430px; height:300px; border:1px solid #aaa; position:absolute; top:0;left:0; padding:25px;}
+.quick_menu2{ width:430px; height:300px; border:1px solid #aaa;  position:absolute; top:0;left:453px; padding:25px;}
+.quick_menu3 { width:289px; height:300px; border:1px solid #aaa; position:absolute; top:0;right:0; }
+table.tb_default { border-top:2px solid #006699; color:#666; font-size:16px; margin:20px 0 ;}
+caption{ position:absolute; overflow:hidden; display:none;}
+table.tb_default thead th { padding:5px 2px; border-bottom:1px solid #ccc; color:#111; text-align:center; font-weight:bold; vertical-align:middle;}
+table.tb_default tbody td, table.tb_default tbody th { padding:5px; border-bottom:1px solid #ccc; text-align:center; }
+
+
+
+/* footer */
+#footer{ clear:both; position:relative; background:#f4f4f4; padding:35px 0 65px 0; border-top:1px solid #bfbfbf;}
+#go_top {position:absolute; top:40px; right:0}
+#footer .container{ position:relative;background:url(../img/common/copy_logo.gif) no-repeat 0 36px}
+#footer .container ul li {display:inline-block; padding-right:20px;}
+#footer .container > ul > li > a{ display:inline-block; color:#444; font-size:16px;}
+#footer .container a.no_margin{ margin:0 } 
+#footer .container a.no_border{ border:0 } 
+#footer p{ color:#444; font-size:14px; margin-top:5px;}
+#footer p.address{ margin-top:10px} 
+#footer .copy_text {padding-top:120px;}
+#footer .copy_text a {font-weight:bold}
+
+
+

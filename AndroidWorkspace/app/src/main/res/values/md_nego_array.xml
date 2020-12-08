@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string-array name="협상카테고리">
+        <item>대여가능</item>
+        <item>대여중</item>
+    </string-array>
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="notice.mapper">
+
+	<delete id="delete">
+		delete from notice where id=#{id} 
+	</delete>
+
+
+	<update id="update">
+		update notice set title=#{title}, content=#{content}
+		, filename=#{filename, jdbcType=VARCHAR}, filepath=#{filepath, jdbcType=VARCHAR} where id=#{id}
+	</update>
+	
+
+
+	<insert id="insert">
+		insert into notice(id, root, title, content, writer, filename, filepath)
+		values (seq_notice_d.nextval, seq_notice_d.currval, #{title}, #{content}, #{writer}, #{filename, jdbcType=VARCHAR}, #{filepath, jdbcType=VARCHAR} )
+	</insert>
+	
+
+
+	<select id="detail" resultType="notice.NoticeVO">
+		select notice.*, (select member_id from tblmember where writer=tblmember.member_id) name
+		from notice where id=#{id}
+	</select>
+
+
+
+	<select id="list" resultType="notice.NoticeVO">
+		select n.* from
+		(select rownum no, n.*
+			, (select member_id from tblmember where writer=member_id) name from
+		(select * from notice order by root, step desc) n
+		order by no desc) n
+		where no between #{beginList} and #{endList}
+		<!-- select * from notice -->
+	</select>
+	
+ 
+ 
+	<select id="total" resultType="integer">
+		select count(*) from notice
+	</select>
+	
+
+</mapper>

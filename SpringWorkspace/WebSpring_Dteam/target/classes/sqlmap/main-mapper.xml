@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><!--xml을 mapper로 사용하기위해 추가 -->
+<mapper namespace="main.mapper">
+
+	<sql id="search_where">
+		<if test="category!=null and category!= ''">
+			where md_category like '%' || #{category} || '%'
+		</if>
+		<if test="keyword!=null and keyword!= ''">
+			where md_name like '%' || #{keyword} || '%'
+			or md_detail_content like
+			'%' || #{keyword} || '%'
+			or member_id in
+			(select member_id from tblmember where member_name
+			like '%' || #{keyword} || '%')
+		</if>
+	</sql>
+
+	<!-- 방명록 목록 건수 조회 -->
+	<select id="total" resultType="integer">
+		select count(*) from tblmerchandise
+		<include refid="search_where" />
+	</select>
+
+	<!-- 방명록 각페이지에 출력할 목록 조회 -->
+	<select id="list" resultType="main.MainVO">
+		select n.*, (select member_name from tblmember m where m.member_id = md_name) name from
+		(select n.*, rownum no from
+		(select * from tblmerchandise
+		<include refid="search_where" />
+		order by member_id) n
+		order by md_registration_date desc) n
+		where no between #{beginList} and #{endList}
+	</select>
+
+	
+	<select id="detail" resultType="main.MainVO">
+		select * from tblmerchandise where md_serial_number = #{md_serial_number}
+	</select>
+	
+	<!--<select id="review" resultType="main.ReviewVO">
+		select review_content, review_scope, 
+    		(select member_nickname from tblmember m where m.member_id=r.md_member_id ) member_nickname 
+		from  tblreview r
+		where md_serial_number=#{md_serial_number}
+	</select> -->
+	
+	<select id="nickaddr" resultType="main.NickaddrVO">
+		select (select member_nickname from tblmember m where m.member_id = c.member_id)member_nickname,
+		(select member_addr from tblmember m where m.member_id = c.member_id) member_addr
+		from tblmerchandise c
+		where md_serial_number = #{md_serial_number}
+	</select>
+		
+	<select id="review" resultType="main.ReviewVO">
+		select review_content, review_scope, member_nickname 
+		from  tblreview r
+		where md_serial_number=#{md_serial_number}
+	</select>
+	
+	<select id="member_info" resultType="member.MemberVO">
+		select * from tblmember m 
+		where m.member_id = (select member_id from tblmerchandise c where c.md_serial_number=#{md_serial_number})
+	</select>
+	
+</mapper>

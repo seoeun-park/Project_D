@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="qna.mapper">
+
+	<delete id="delete">
+		delete from qna where id=#{id} 
+	</delete>
+
+
+
+	<update id="update">
+		update qna set title=#{title}, content=#{content}
+		, filename=#{filename, jdbcType=VARCHAR}, filepath=#{filepath, jdbcType=VARCHAR} where id=#{id}
+	</update>
+
+
+
+	<insert id="insert">
+		<!-- insert into qna(id, root, title, content, writer, filename, filepath)
+		values (seq_qna.nextval, seq_qna.currval, #{title}, #{content}, #{writer}, #{filename, jdbcType=VARCHAR}, #{filepath, jdbcType=VARCHAR} ) -->
+		
+		insert into qna(id, root, title, content, writer, filename, filepath)
+		values (seq_qna.nextval, seq_qna.currval, #{title}, #{content}, #{writer}, #{filename, jdbcType=VARCHAR}, #{filepath, jdbcType=VARCHAR} )
+	</insert>
+
+
+
+	<select id="detail" resultType="qna.QnaVO">
+		select qna.*, (select member_name from tblmember where writer=tblmember.member_id) name
+		from qna where id=#{id}
+	</select>
+
+
+
+	<select id="list" resultType="qna.QnaVO">
+		select n.*, (select writer from qna q where n.root=q.id) q_writer from
+		(select rownum no, n.*
+			, (select member_id from tblmember where writer=member_id) name from
+		(select * from qna order by root, step desc) n
+		order by no desc) n
+		where no between #{beginList} and #{endList}
+	</select>
+	
+	
+	<select id="total" resultType="integer">
+		select count(*) from qna
+	</select>
+	
+	<insert id="reply">
+		{
+		call declare
+		begin 
+			<![CDATA[
+			update qna set step=step+1 where root=#{root} and step > #{step};
+			insert into qna(id, title, content, writer, filename, filepath, root, step, indent)
+			values (seq_qna.nextval, #{title}, #{content}, #{writer}
+								, #{filename, jdbcType=VARCHAR}
+								, #{filepath, jdbcType=VARCHAR}
+								, #{root}, #{step}+1, #{indent}+1 );
+			]]>					
+		end
+		}
+	</insert>
+	
+	
+</mapper>

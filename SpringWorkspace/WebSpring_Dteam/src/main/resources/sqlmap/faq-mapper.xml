@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="faq.mapper">
+
+
+	<delete id="delete">
+		delete from faq where id=#{id} 
+	</delete>
+	
+	<update id="update">
+		update faq set title=#{title}, content=#{content}
+		, filename=#{filename, jdbcType=VARCHAR}, filepath=#{filepath, jdbcType=VARCHAR} where id=#{id}
+	</update>
+
+
+	<insert id="insert">
+		insert into faq(id, root, title, content, writer, filename, filepath)
+		values (seq_faq.nextval, seq_faq.currval, #{title}, #{content}, #{writer}, #{filename, jdbcType=VARCHAR}, #{filepath, jdbcType=VARCHAR} )
+	</insert>
+	
+	
+	
+	<select id="detail" resultType="faq.FaqVO">
+		select faq.*, (select member_id from tblmember where writer=tblmember.member_id) name
+		from faq where id=#{id}
+	</select>
+
+
+
+	<select id="list" resultType="faq.FaqVO">
+		select n.* from
+		(select rownum no, n.*
+			, (select member_id from tblmember where writer=member_id) name from
+		(select * from faq order by root, step desc) n
+		order by no desc) n
+		where no between #{beginList} and #{endList}
+		<!-- select * from faq -->
+	</select>
+
+
+
+	<select id="total" resultType="integer">
+		select count(*) from faq
+	</select>
+
+
+</mapper>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="detailcomment.mapper">
+<!-- bid = md_serial_number / writer = member_id  -->
+
+<insert id="comment_regist">
+	insert into detail_comment(md_serial_number, member_id, content)
+	values (#{md_serial_number}, #{member_id}, #{content})
+</insert>
+
+
+<select id="comment_list" resultType="detailcomment.DetailcommentVO">
+select c.*, (select member_nickname from tblmember m where m.member_id = c.member_id) member_nickname,
+		to_char (writedate, 'yyyy-mm-dd hh24:mi:ss') writedate  
+from detail_comment c where md_serial_number=#{md_serial_number}
+order by id desc
+</select>
+
+<delete id="comment_delete">
+delete from detail_comment where id=#{id}
+</delete>
+
+<update id="comment_update">
+update detail_comment set content=#{content}
+where id = #{id}
+</update>
+
+
+</mapper>
+
+

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:id="@+id/mainLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp"
+        android:src="@drawable/logo2" />
+
+    <Button
+        android:id="@+id/signUpBtn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mainLogo"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="21dp"
+        android:background="#3e4ba9"
+        android:text="회원가입"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/snsImgView"
+        android:layout_width="match_parent"
+        android:layout_height="162dp"
+        android:layout_below="@+id/signUpBtn"
+        android:layout_marginTop="0dp"
+        app:srcCompat="@drawable/sns" />
+
+    <Button
+        android:id="@+id/naverJoinBtn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/snsImgView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:background="#16AF37"
+        android:text="NAVER ID로 회원가입"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/kakaoJoinBtn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/naverJoinBtn"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="16dp"
+        android:background="#F6D52B"
+        android:text="KAKAOTALK ID로 회원가입"
+        android:textColor="#472E08"
+        android:textSize="18sp" />
+
+</RelativeLayout>
